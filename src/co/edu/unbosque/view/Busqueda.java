@@ -2,7 +2,7 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Font;
+import java.awt.Font;   
 import java.awt.GridLayout;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -175,3 +175,4 @@ public class Busqueda extends JFrame {
 	}
 
 }
+

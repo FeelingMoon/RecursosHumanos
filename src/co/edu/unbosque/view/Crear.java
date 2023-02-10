@@ -19,6 +19,13 @@ import javax.swing.border.TitledBorder;
 
 import co.edu.unbosque.model.persistence.FileHandler;
 
+/**
+ * Class in charge of the creation of the windows concerning the creation of an
+ * applicant.
+ * 
+ * @author Miguel Linares
+ *
+ */
 @SuppressWarnings("serial")
 public class Crear extends JFrame {
 	private JPanel ventanaI;
@@ -36,6 +43,13 @@ public class Crear extends JFrame {
 	private JTextField edad;
 	private JTextField cargo;
 
+	/**
+	 * Method in charge of initializing the parameters of the window, as well as
+	 * receiving the parameters related to the mouse..
+	 * 
+	 * @param mouse  In charge of handling mouse related issues.
+	 * @param motion In charge of managing the movement (drag) of the mouse.
+	 */
 	public Crear(MouseListener mouse, MouseMotionListener motion) {
 		properties = FileHandler.loadPropities();
 		pr = new Color(255, 0, 56);
@@ -140,22 +154,51 @@ public class Crear extends JFrame {
 		//
 	}
 
+	/**
+	 * Method in charge of giving the labels (buttons) to give them their use.
+	 * 
+	 * @param x The label to give.
+	 * @return The requested label.
+	 */
 	public JLabel obtenerLB(int x) {
 		return bots.get(x);
 	}
 
+	/**
+	 * Method that changes the color of the label when the mouse pointer passes over
+	 * it.
+	 * 
+	 * @param x The label to change the color.
+	 */
 	public void interiorColor(int x) {
 		bots.get(x).setBackground(sc);
 	}
 
+	/**
+	 * Method that changes the color of the label when the mouse pointer leaves the
+	 * label.
+	 * 
+	 * @param x The label to change the color.
+	 */
 	public void exteriorColor(int x) {
 		bots.get(x).setBackground(pr);
 	}
 
+	/**
+	 * Method that takes care of changing the location of the window.
+	 * 
+	 * @param x Location on the x-axis.
+	 * @param y Location on the y-axis.
+	 */
 	public void ubicacion(int x, int y) {
 		this.setLocation(x, y);
 	}
 
+	/**
+	 * Method in charge of obtaining the information related to the candidate.
+	 * 
+	 * @return The strings that is written.
+	 */
 	public String obtenerTextos() {
 		if (nombre.getText().isEmpty() || apellido.getText().isEmpty() || cedula.getText().isEmpty()
 				|| edad.getText().isEmpty() || cargo.getText().isEmpty()) {
@@ -167,32 +210,60 @@ public class Crear extends JFrame {
 				String aux = nombre.getText() + "%" + apellido.getText() + "%" + cedula.getText() + "%" + edad.getText()
 						+ "%" + cargo.getText();
 				return aux;
-			}catch (Exception e) {
+			} catch (Exception e) {
 				return "0001";
 			}
 		}
 	}
-	
+
+	/**
+	 * Method in charge of obtaining the information related to the name.
+	 * 
+	 * @return The string that is written.
+	 */
 	public String getNombre() {
 		return nombre.getText();
 	}
-	
+
+	/**
+	 * Method in charge of obtaining the information related to the last name.
+	 * 
+	 * @return The string that is written.
+	 */
 	public String getApellido() {
 		return apellido.getText();
 	}
-	
+
+	/**
+	 * Method in charge of obtaining the information related to the id.
+	 * 
+	 * @return The string that is written.
+	 */
 	public int getCedula() {
 		return Integer.parseInt(cedula.getText());
 	}
-	
+
+	/**
+	 * Method in charge of obtaining the information related to the age.
+	 * 
+	 * @return The int that is written.
+	 */
 	public int getEdad() {
 		return Integer.parseInt(edad.getText());
 	}
-	
+
+	/**
+	 * Method in charge of obtaining the information related to the position.
+	 * 
+	 * @return The string that is written.
+	 */
 	public String getCargo() {
 		return cargo.getText();
 	}
-	
+
+	/**
+	 * Method in charge of cleaning the texts that are registered.
+	 */
 	public void limpiar() {
 		nombre.setText("");
 		apellido.setText("");

@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * applicant.
  * 
  * @author Johan Silva
- *
+ * @author Miguel Linarez
  */
 public class PopUp {
 	/**

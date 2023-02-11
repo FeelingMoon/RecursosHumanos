@@ -9,6 +9,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Properties;
 
+/**
+ * File management class
+ * @author Johan Silva
+ * @author Miguel Linarez
+ */
 public class FileHandler {
 	
 	private static FileInputStream fis;
@@ -16,7 +21,7 @@ public class FileHandler {
 	private static FileOutputStream fos;
 	private static ObjectOutputStream oos;
 	/**
-	 * Encargado de dar las propiedades de los textos
+	 * Method in charge of giving the properties of the texts
 	 * 
 	 * @return Propiedades
 	 */

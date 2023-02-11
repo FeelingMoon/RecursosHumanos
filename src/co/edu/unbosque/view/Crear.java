@@ -24,7 +24,7 @@ import co.edu.unbosque.model.persistence.FileHandler;
  * applicant.
  * 
  * @author Miguel Linares
- *
+ * @author Johan Silva
  */
 @SuppressWarnings("serial")
 public class Crear extends JFrame {

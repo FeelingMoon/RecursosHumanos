@@ -4,19 +4,34 @@ import java.util.ArrayList;
 
 import co.edu.unbosque.model.persistence.FileHandler;
 
+/**
+ * Information management class
+ * @author Johan Silva
+ * @author Miguel Linarez
+ */
 public class ImplementsCandidatosDAO implements CandidatosDAO{
 	
 	ArrayList<CandidatosDTO> candidatos;
 	
+	/**
+	 * Constructor method
+	 */
 	public ImplementsCandidatosDAO() {
 		candidatos = new ArrayList<>();
 	}
 	
+	/**
+	 * Method in charge of saving the information in a file
+	 * @param object Information to save
+	 */
 	public void guardar(Object object) {
 		FileHandler.writeSerializable(object);
 	}
 	
 	@SuppressWarnings("unchecked")
+	/**
+	 * Method in charge of loading the information
+	 */
 	public void cargar() {
 		if(FileHandler.loadSerializable() != null) {
 			candidatos = (ArrayList<CandidatosDTO>) FileHandler.loadSerializable();

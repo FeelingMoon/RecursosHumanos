@@ -18,6 +18,13 @@ import javax.swing.border.MatteBorder;
 
 import co.edu.unbosque.model.persistence.FileHandler;
 
+/**
+ * Class in charge of the home of the windows concerning the search of an
+ * applicant.
+ * 
+ * @author Miguel Linares
+ *
+ */
 @SuppressWarnings("serial")
 public class Principal extends JFrame {
 	private JPanel ventanaI;
@@ -35,6 +42,13 @@ public class Principal extends JFrame {
 	private Properties properties;
 	private Color pr, sc;
 
+	/**
+	 * Method in charge of initializing the parameters of the window, as well as
+	 * receiving the parameters related to the mouse..
+	 * 
+	 * @param mouse  In charge of handling mouse related issues.
+	 * @param motion In charge of managing the movement (drag) of the mouse.
+	 */
 	public Principal(MouseListener mouse, MouseMotionListener motion) {
 		properties = FileHandler.loadPropities();
 		pr = new Color(255, 0, 56);
@@ -139,10 +153,22 @@ public class Principal extends JFrame {
 		//
 	}
 
+	/**
+	 * Method in charge of giving the labels (buttons) to give them their use.
+	 * 
+	 * @param x The label to give.
+	 * @return The requested label.
+	 */
 	public JLabel obtenerLB(int x) {
 		return bots.get(x);
 	}
 
+	/**
+	 * Method that changes the color of the label when the mouse pointer passes over
+	 * it.
+	 * 
+	 * @param x The label to change the color.
+	 */
 	public void interiorColor(int x) {
 		if (x == 0) {
 			salir.setBackground(Color.WHITE);
@@ -152,6 +178,12 @@ public class Principal extends JFrame {
 		}
 	}
 
+	/**
+	 * Method that changes the color of the label when the mouse pointer leaves the
+	 * label.
+	 * 
+	 * @param x The label to change the color.
+	 */
 	public void exteriorColor(int x) {
 		if (x == 0) {
 			salir.setBackground(sc);
@@ -161,6 +193,12 @@ public class Principal extends JFrame {
 		}
 	}
 
+	/**
+	 * Method that takes care of changing the location of the window.
+	 * 
+	 * @param x Location on the x-axis.
+	 * @param y Location on the y-axis.
+	 */
 	public void ubicacion(int x, int y) {
 		this.setLocation(x, y);
 

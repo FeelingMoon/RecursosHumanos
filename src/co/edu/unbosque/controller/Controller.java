@@ -14,6 +14,11 @@ import co.edu.unbosque.view.Modificar;
 import co.edu.unbosque.view.PopUp;
 import co.edu.unbosque.view.Principal;
 
+/**
+ * Class that acts as an intermediary between the model and the view
+ * @author Johan Silva
+ * @author Miguel Linarez
+ */
 public class Controller implements MouseListener, MouseMotionListener {
 	private Principal principal;
 	private Crear crear;
@@ -25,7 +30,10 @@ public class Controller implements MouseListener, MouseMotionListener {
 	private int xmouse, ymouse;
 	private ImplementsCandidatosDAO candidatos;
 //	private KeyListener keyNumeros, keyLetras;
-
+	
+	/**
+	 * Constructor method
+	 */
 	public Controller() {
 		candidatos = new ImplementsCandidatosDAO();
 		candidatos.cargar();
